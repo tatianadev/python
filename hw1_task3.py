@@ -9,16 +9,16 @@ def remove_zero_value(input_list):
     return input_list
 
 
-def generate_sieve_of_eratosthenes(input_list):
+def apply_sieve_of_eratosthenes(input_list):
     k = 2
-    t = 1
+    t = 2
     while k < len(input_list):
         while t < len(input_list):
             if input_list[t] != 0 and input_list[t] != k and input_list[t] % k == 0:
                 input_list[t] = 0
             t += 1
-        k += 1
         t = k + 1
+        k += 1
 
     final_result = remove_zero_value(input_list)
     print("Final result: {}".format(final_result))
@@ -33,4 +33,4 @@ for i in range(1, input_value):  # add in list values from 1 to entered_value - 
 
 print("Original list of values: {}".format(list_of_values))
 
-generate_sieve_of_eratosthenes(list_of_values)
+apply_sieve_of_eratosthenes(list_of_values)
