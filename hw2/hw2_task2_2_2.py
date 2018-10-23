@@ -31,6 +31,7 @@ def find_year_and_month(input_start_year, input_start_month, input_min_year, inp
                 input_start_month = 12
 
 
+# input value
 input_value = input('Enter day of week: ')
 
 names_of_days = list(day_name)
