@@ -1,4 +1,4 @@
-file_name = 'text_file.txt'
+file_name = 'text_file.txt'  # name of file
 
 # notes:
 # https://docs.python.org/3.7/tutorial/inputoutput.html#methods-of-file-objects
