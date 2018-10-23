@@ -17,6 +17,7 @@ def find_angle_of_triangle(a, b, c):
     return degrees_angle
 
 
+# input value
 first_side = float(input("Enter value of fist side of triangle: "))
 second_side = float(input("Enter value of second side of triangle: "))
 third_side = float(input("Enter value of third side of triangle: "))
