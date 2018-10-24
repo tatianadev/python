@@ -5,15 +5,15 @@ from string import ascii_letters
 file_name = 'text_file.txt'
 
 with open(file_name, 'r') as f:
-    data_from_file = f.read()
+    text = f.read()
 
-new_dict = {}
-for symbol in data_from_file:
-    if symbol in new_dict.keys():
-        new_dict[symbol] += 1
+chars_dict = {}
+for i in text:
+    if i in chars_dict.keys():
+        chars_dict[i] += 1
     else:
-        new_dict[symbol] = 1
+        chars_dict[i] = 1
 
-for key, value in new_dict.items():
+for key, value in chars_dict.items():
     if key in ascii_letters:
-        print("Symbol: {}, appeared in text: {} times.".format(ascii(key), value))
+        print("Symbol: {}, appeared in text: {} times.".format(key, value))
