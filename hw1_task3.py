@@ -21,7 +21,7 @@ def apply_sieve_of_eratosthenes(input_list):
         k += 1
 
     final_result = remove_zero_value(input_list)
-    print("Final result: {}".format(final_result))
+    return final_result
 
 
 list_of_values = []
@@ -33,4 +33,5 @@ for i in range(1, input_value):  # add in list values from 1 to entered_value - 
 
 print("Original list of values: {}".format(list_of_values))
 
-apply_sieve_of_eratosthenes(list_of_values)
+result = apply_sieve_of_eratosthenes(list_of_values)
+print("Final result: {}".format(result))
