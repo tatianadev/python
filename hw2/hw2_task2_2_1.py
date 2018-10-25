@@ -15,9 +15,11 @@ def find_day_of_week(input_value):
 
     # find name of day of the week by value
     name_of_the_day = list(day_name)[number_of_day_of_the_week]
-    print("%s" % name_of_the_day)
+    return name_of_the_day
 
 
 # input value
 input_date = input("Enter date of your birth(in format DD.MM.YYYY): ")
-find_day_of_week(input_date)
+found_name_of_day = find_day_of_week(input_date)
+
+print("%s" % found_name_of_day)
