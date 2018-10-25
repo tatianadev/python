@@ -11,11 +11,11 @@ def find_day_of_week(input_value):
     input_day = valid_date.tm_mday
 
     # find number of day of the week
-    number_of_day_of_the_week = weekday(input_year, input_month, input_day)
+    number_of_day = weekday(input_year, input_month, input_day)
 
     # find name of day of the week by value
-    name_of_the_day = list(day_name)[number_of_day_of_the_week]
-    return name_of_the_day
+    name_of_day = list(day_name)[number_of_day]
+    return name_of_day
 
 
 # input value
