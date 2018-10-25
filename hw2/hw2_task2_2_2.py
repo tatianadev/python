@@ -21,8 +21,7 @@ def find_year_and_month(input_start_year, input_start_month, input_min_year, inp
         if monthrange(input_start_year, input_start_month)[0] == input_number_of_day:
             final_year = input_start_year
             final_month = input_start_month
-            print("Year: %d, month: %d(%s)" % (final_year, final_month, month_name[final_month]))
-            break
+            return final_year, final_month
         else:
             if input_start_month > 1:
                 input_start_month -= 1
@@ -46,4 +45,5 @@ else:
         if input_value == names_of_days[i]:
             number_of_day = i
             print("Number of day: %d" % number_of_day)
-            find_year_and_month(start_year, start_month, min_year, number_of_day)
+            result_data = find_year_and_month(start_year, start_month, min_year, number_of_day)
+            print("Year: %d, month: %d(%s)" % (result_data[0], result_data[1], month_name[result_data[1]]))
