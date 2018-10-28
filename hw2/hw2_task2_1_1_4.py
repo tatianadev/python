@@ -1,33 +1,30 @@
 file_name = 'text_file.txt'
 second_file = 'new_file.txt'
+odd_numb_of_lines = False
+EOL_symbol = '\n'
 
 with open(file_name, 'r') as f:
-    records_from_file = f.readlines()
+    file_lines = f.read().splitlines()
 
-number_of_records = len(records_from_file)
+numb_of_lines = len(file_lines)
 
-
-if number_of_records % 2 != 0:
-    number_of_middle_record = int(number_of_records // 2 + 1)
+if numb_of_lines % 2 != 0:
+    odd_numb_of_lines = True
+    middle_line_numb = int(numb_of_lines // 2 + 1)
 else:
-    number_of_middle_record = int(number_of_records / 2)
-
-counter = number_of_middle_record
+    middle_line_numb = int(numb_of_lines / 2)
 
 # write into file
 with open(second_file, 'w') as f:
     # write to file second part of lines
-    while counter < len(records_from_file):
-        f.write(records_from_file[counter])
-        counter += 1
+    for i in range(middle_line_numb, len(file_lines)):
+        f.write(file_lines[i] + EOL_symbol)
 
-    # write to file middle record, if number of records is odd
-    if number_of_records % 2 != 0:
-        f.write(records_from_file[number_of_middle_record - 1])
-        number_of_middle_record = number_of_middle_record - 1
+    # write to file middle line, if number of lines is odd
+    if odd_numb_of_lines:
+        f.write(file_lines[middle_line_numb - 1] + EOL_symbol)
+        middle_line_numb = middle_line_numb - 1
 
     # write to file first part of lines
-    i = 0
-    while i < number_of_middle_record:
-        f.write(records_from_file[i])
-        i += 1
+    for i in range(0, middle_line_numb):
+        f.write(file_lines[i] + EOL_symbol)
