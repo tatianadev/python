@@ -49,6 +49,8 @@ else:
         if input_value == names_of_days[i]:
             number_of_day = i
             print("Number of day: %d" % number_of_day)
-            found_year_and_month = find_year_and_month(start_year, start_month, min_year, number_of_day)
-            print("Year: %d, month: %d(%s)" % (found_year_and_month[0], found_year_and_month[1],
-                                               month_name[found_year_and_month[1]]))
+            found_year, found_month = find_year_and_month(start_year, start_month, min_year, number_of_day)
+            if found_year is not None and found_month is not None:
+                print("Year: %d, month: %d(%s)" % (found_year, found_month, month_name[found_month]))
+            else:
+                print("Year and month were not found!")
