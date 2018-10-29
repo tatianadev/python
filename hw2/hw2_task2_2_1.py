@@ -14,7 +14,7 @@ def find_day_of_week(input_value):
     number_of_day = weekday(input_year, input_month, input_day)
 
     # find name of day of the week by value
-    name_of_day = list(day_name)[number_of_day]
+    name_of_day = list(day_name)[number_of_day]  # list(day_name) - лишняя операция, просто day_name[number_of_day]
     return name_of_day
 
 

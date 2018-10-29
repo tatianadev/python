@@ -1,4 +1,6 @@
 def compare_string_values(first_str, second_str):
+    # можно было написать просто:
+    # return second_string in first_string
     if second_string in first_string:
         return True
     else:

@@ -9,5 +9,9 @@ file_name = 'text_file.txt'  # name of file
 
 # read data from file and print this data
 with open(file_name, 'r') as f:
+    # можно было сделать проще: считать полностью весь файл и сразу весь текст отдать в print
+    # например:
+    # text = f.read()
+    # print(text)
     for line in f:
         print(line, end='')

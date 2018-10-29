@@ -17,7 +17,7 @@ def check_range(x, y):
     try:
         x = int(x)
         y = int(y)
-        if x in avail_values and y in avail_values:
+        if x in avail_values and y in avail_values:  # проще записать 1 <= x <= 3 and 1 <= y <= 3
             return True
         else:
             return False
