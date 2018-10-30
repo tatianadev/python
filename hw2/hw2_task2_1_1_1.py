@@ -13,5 +13,5 @@ with open(file_name, 'r') as f:
     # например:
     # text = f.read()
     # print(text)
-    for line in f:
-        print(line, end='')
+    text = f.read()
+    print(text)
