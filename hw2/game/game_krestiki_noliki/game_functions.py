@@ -13,11 +13,10 @@ def print_field(field):
 
 # check input values or row and column of user
 def check_range(x, y):
-    avail_values = (1, 2, 3)
     try:
         x = int(x)
         y = int(y)
-        if x in avail_values and y in avail_values:  # проще записать 1 <= x <= 3 and 1 <= y <= 3
+        if 1 <= x <= 3 and 1 <= y <= 3:  # проще записать 1 <= x <= 3 and 1 <= y <= 3
             return True
         else:
             return False
