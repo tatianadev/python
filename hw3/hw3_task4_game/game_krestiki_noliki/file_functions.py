@@ -30,8 +30,7 @@ def load_from_file():
 # remove file with data
 def remove_file():
     try:
-        directory_path = os.getcwd()
-        if isfile(os.path.join(directory_path, file_name)):  # check, if file exists in directory
+        if os.path.isfile(file_name):  # check, if file exists in directory
             os.remove(file_name)
         return True
     except:
