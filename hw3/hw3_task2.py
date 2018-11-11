@@ -82,10 +82,14 @@ print("Actions: {}".format(action))
 filtered_values = []
 for i in dict_for_filter[action[2]](numbers):
     filtered_values.append(i)
-print("Filtered values ({}): {}".format(action[2], filtered_values))
 
-map_values = list(map(dict_for_map[action[1]], filtered_values))
-print("Values after map ({}): {}".format(action[1], map_values))
+# print("Filtered values ({}): {}".format(action[2], filtered_values))
 
-reduce_values = reduce(dict_for_reduce[action[0]], map_values, dict_reduce_val[action[0]])
+# map_values = list(map(dict_for_map[action[1]], filtered_values))
+# print("Values after map ({}): {}".format(action[1], map_values))
+
+reduce_values = reduce(dict_for_reduce[action[0]], map(dict_for_map[action[1]], filtered_values),
+                       dict_reduce_val[action[0]])
+
+# reduce_values = reduce(dict_for_reduce[action[0]], map_values, dict_reduce_val[action[0]])
 print("Values after reduce ({}): {}".format(action[0], reduce_values))
