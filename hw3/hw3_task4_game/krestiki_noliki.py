@@ -48,7 +48,7 @@ for i in range(counter, 9):
                 sys.exit()
             break
 
-        except KeyboardInterrupt:
+        except EOFError:  # Ctrl+D
             if not file_functions.dump_to_file(field):
                 print("Game is not saved!")
             else:
