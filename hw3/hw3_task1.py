@@ -69,15 +69,19 @@ for i in range(0, input_number):
 
 print("Generated values: {}".format(numbers))
 
-input_actions = input("Please enter actions: ")
+input_actions = input("Please enter actions: ")  # example: sum negated odds
 action = input_actions.split()
 print("Actions: {}".format(action))
 
-filtered_values = list(filter(dict_for_filter[action[2]], numbers))
-print("Filtered values ({}): {}".format(action[2], filtered_values))
+# filtered_values = list(filter(dict_for_filter[action[2]], numbers))
+# print("Filtered values ({}): {}".format(action[2], filtered_values))
 
-map_values = list(map(dict_for_map[action[1]], filtered_values))
-print("Values after map ({}): {}".format(action[1], map_values))
+# map_values = list(map(dict_for_map[action[1]], filtered_values))
+# print("Values after map ({}): {}".format(action[1], map_values))
 
-reduce_values = reduce(dict_for_reduce[action[0]], map_values, dict_reduce_val[action[0]])
+reduce_values = reduce(dict_for_reduce[action[0]],
+                       map(dict_for_map[action[1]], filter(dict_for_filter[action[2]], numbers)),
+                       dict_reduce_val[action[0]])
+
+# reduce_values = reduce(dict_for_reduce[action[0]], map_values, dict_reduce_val[action[0]])
 print("Values after reduce ({}): {}".format(action[0], reduce_values))
