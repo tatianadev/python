@@ -42,7 +42,8 @@ if os.path.isfile(file_name):
     else:
         data_from_file = file_data[4:]
 
-    data_json = json.loads(data_from_file)  # type of data_json: dict
+    # data_from_file.decode() - decode converts from bytes to str type
+    data_json = json.loads(data_from_file.decode())  # type of data_json: dict
 
 if encrypt_file_sign.upper() == 'Y':
     encrypt_sign = True
