@@ -44,7 +44,14 @@ class Descriptor(object):
 class Person(object):
     def __init__(self, name):
         self.name = name
-        if self.name not in persons:
+        if self.name not in persons:  # не очень хорошая проверка
+            # как правило, к базам данным имеют доступ несколько приложений
+            # поэтому с момента вызова load_persons содержимое базы могло поменяться
+            # если ты при этом попытаешься выполнить INSERT, то получишь ошибку
+            # поэтому, например, в своем примере я проверял, что пользователя нет в базе
+            # при помощи SELECT COUNT(*) FROM persons WHERE name = ?
+            # возможно, это не сильно важно в этом случае, потому что тут
+            # гарантировано кроме тебя в базе ничего не делает, но все же :)
             db.execute('insert into persons values(?,?,?)', (self.name, None, None))
         db.commit()
 
